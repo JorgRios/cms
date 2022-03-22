@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SystemController;
+use App\Http\Controllers\ParametricController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +19,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SystemController::class, 'index']);
+Route::get('/productos',[ProductController::class, 'index']);

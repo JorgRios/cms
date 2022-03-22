@@ -15,18 +15,18 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('username', 50);
-            $table->string('name');
-            $table->char('depatment_id',4)->default('0');
-            $table->string('email')->unique();
-            $table->string('phone', 50)->nullable();
-            $table->text('adress')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-            $table->softDeletes();
+            $table->id()->comment('en este campo se guarda la clave principal de los usuarios');
+            $table->string('username', 50)->comment('en este campo se guarda el nombre de usuario de los usuarios');
+            $table->string('name')->comment('en este campo se guarda el nombre de usuario');
+            $table->char('depatment_id',4)->default('0')->comment('en este campo se guarda el identificador del departamento');
+            $table->string('email')->unique()->comment('en este campo se guarda el email del usuario');
+            $table->string('phone', 50)->nullable()->comment('en este campo se guarda el numero de contacto del usuario');
+            $table->text('adress')->nullable()->comment('en este campo se guarda la direccion del usuario');
+            $table->timestamp('email_verified_at')->nullable()->comment('en este campo se guarda el tiempo en el que fue creado el email');
+            $table->string('password')->comment('en este campo se guarda la contrasena del usuario');
+            $table->rememberToken()->comment('en este campo se guarda los moviemientos realizados por el usuario');
+            $table->timestamps()->comment('en este campo se guarda el reistro de tiempo');
+            $table->softDeletes()->comment('en este campo se guarda los registros borrados');
         });
     }
 

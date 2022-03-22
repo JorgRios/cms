@@ -22,9 +22,9 @@ class CreatePrincipalEngineTables extends Migration
             $table->char('tipe2_id',4)->default('0');
             $table->string('feacture_1', 512)->nullable()->comment('en este campo se guardara el color de los productos, en el caso de servicios, se guardara el titulo del servicio');
             $table->string('feacture_2', 512)->nullable()->comment('en este campo se guardara la ruta de la foto del producto, en el caso de servicios, se guardara la descripcion secundara del servicio');
-            $table->string('feacture_3', 512)->nullable();
-            $table->string('feacture_4', 512)->nullable();
-            $table->string('feacture_5', 512)->nullable();
+            $table->string('feacture_3', 512)->nullable()->comment('en este campo se guardara la fecha de creacion');
+            $table->string('feacture_4', 512)->nullable()->comment('en este campo se guardara la fecha de actualizacion');;
+            $table->string('feacture_5', 512)->nullable()->comment('en este campo se guardara la fecha de eliminacion');;
             $table->string('feacture_6', 512)->nullable();
             $table->string('feacture_7', 512)->nullable();
             $table->timestamps();

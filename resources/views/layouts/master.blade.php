@@ -6,7 +6,6 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <meta name="title" content="@yield('title', config('parametric.metadata.title'))">
-
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -15,7 +14,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('vendor\bootstrap_coffe\css\styles.css')}}" rel="stylesheet" />
     </head>
-    <body>
+    <body background="{{asset('components/img/bg.jpg')}}">
         @yield('header')
         <!-- Navigation-->
         @include('components.navbar')

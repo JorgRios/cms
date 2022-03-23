@@ -21,3 +21,6 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [SystemController::class, 'index']);
 Route::get('/productos',[ProductController::class, 'index']);
+Route::get('/nosotros',[SystemController::class, 'about']);
+Route::get('/contacto',[SystemController::class, 'contact']);
+Route::get('/login',[AuthController::class, 'login']);

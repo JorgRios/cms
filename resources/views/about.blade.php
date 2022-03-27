@@ -3,7 +3,7 @@
 G&D Smart - Nosotros
 @endsection
 @section('header')
-    @include('components.header')
+
 @endsection
 @section('content')
 <section class="page-section about-heading">

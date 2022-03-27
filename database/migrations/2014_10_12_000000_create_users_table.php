@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id()->comment('en este campo se guarda la clave principal de los usuarios');
+            $table->id();
             $table->string('username', 50)->comment('en este campo se guarda el nombre de usuario de los usuarios');
             $table->string('name')->comment('en este campo se guarda el nombre de usuario');
             $table->char('depatment_id',4)->default('0')->comment('en este campo se guarda el identificador del departamento');
@@ -25,8 +25,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable()->comment('en este campo se guarda el tiempo en el que fue creado el email');
             $table->string('password')->comment('en este campo se guarda la contrasena del usuario');
             $table->rememberToken()->comment('en este campo se guarda los moviemientos realizados por el usuario');
-            $table->timestamps()->comment('en este campo se guarda el reistro de tiempo');
-            $table->softDeletes()->comment('en este campo se guarda los registros borrados');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

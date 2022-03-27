@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SystemController;
 use App\Http\Controllers\ParametricController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,9 @@ Route::get('/', [SystemController::class, 'index']);
 Route::get('/productos',[ProductController::class, 'index']);
 Route::get('/nosotros',[SystemController::class, 'about']);
 Route::get('/contacto',[SystemController::class, 'contact']);
-Route::get('/login',[AuthController::class, 'login']);
+
+Route::get('admin', [AdminController::class, 'dashboard']);
+Route::get('/login', [AuthController::class, 'showLoginForm']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+

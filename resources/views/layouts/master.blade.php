@@ -25,6 +25,9 @@
             <section class="py-5">
                 @yield('content2')
             </section>
+            <section class="py-5">
+                @yield('content3')
+            </section>
         </main>
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">

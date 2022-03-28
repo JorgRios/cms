@@ -11,9 +11,20 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showroom()
     {
         return view('layouts.products.index');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $products = \App\Models\Product::all();
+        return view('layouts.admin.products.index',compact('products'));
     }
 
     /**

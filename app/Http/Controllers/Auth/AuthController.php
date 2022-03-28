@@ -14,19 +14,18 @@ class AuthController extends Controller
 
     public function login(Request $request){
         $credentials = $request->only('username', 'password');
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)){
             $request->session()->regenerate();
-            if(Auth::user()->hasPermissionTo('main.show')){
-                return redirect()->intended('home');
-            }else{
-                return redirect()->intended('/');
-            }
+            return redirect()->intended('/');
         }
         toastr()->error('Por favor revise sus datos de ingreso','Error al ingresar');
         return back();
     }
 
     public function logout(){
-        return "cerrando session";
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/');
     }
 }

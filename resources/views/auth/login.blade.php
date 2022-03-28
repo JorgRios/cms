@@ -9,6 +9,8 @@
         <title>Login - SB Admin</title>
         <link href="{{asset('vendor\admin_dashboard\css\styles.css')}}" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        @toastr_css
+        @yield('css')
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -27,11 +29,11 @@
                                     <div class="card-body">
                                         {!! Form::open([ 'route' => 'login']) !!}
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="text" placeholder="nombre de usuario" />
-                                                <label for="inputEmail">Nombre de usuario</label>
+                                                {!! Form::text('username', null, ['class'=>'form-control','id'=>'inputUsername','placeholder'=>'Nombre de Usuario']) !!}
+                                                <label for="inputUsername">Nombre de usuario</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Contraseña" />
+                                                {!! Form::password('password', ['class'=>'form-control','id'=>'inputPassword','placeholder'=>'Contraseña']) !!}
                                                 <label for="inputPassword">Contraseña</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
@@ -65,5 +67,8 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('vendor\startbootstrap-modern-business\js\scripts.js')}}"></script>
+        @jquery
+        @toastr_js
+        @toastr_render
     </body>
 </html>

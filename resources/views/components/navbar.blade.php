@@ -12,8 +12,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownLogin" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLogin">
-                        <li><a class="dropdown-item" href="blog-home.html">Administrar Pagina</a></li>
-                        <li><a class="dropdown-item" href="blog-post.html">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item" href="/admin">Administrar Pagina</a></li>
+                        <li><a class="dropdown-item" href="/logout">Cerrar sesion</a></li>
                     </ul>
                 </li>
                 @else

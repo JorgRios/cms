@@ -19,14 +19,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
         'username',
-        'password',
-        'adress',
-        'phone',
+        'name',
         'depatment_id',
-
+        'email',
+        'phone',
+        'adress',
+        'password',
     ];
 
     /**
@@ -59,9 +58,19 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function departamento(): BelongsTo
+    public function departamento()
     {
         return $this->belongsTo(Parametric::class, 'valor', 'department_id');
+    }
+
+    /**
+     * Get all of the products for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'created_user_id');
     }
 
 }
